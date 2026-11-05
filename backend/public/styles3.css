@@ -1,0 +1,37 @@
+html {
+    background-color: gray;
+}
+h1 {
+
+    display: flex;
+    justify-content: center;
+}
+h3 {
+
+    display: flex;
+    justify-content: center;
+}
+
+
+.acc-label
+{
+    text-align: center;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+}
+input {
+    width: 35%;
+    margin: 5px;
+    align-self: center;
+}
+button {
+    width: 50%;
+    margin-top: 15px;
+    align-self: center;
+}
+input#acc-b {
+    width: 50%;
+    height: 76px;
+    align-self: center;
+}

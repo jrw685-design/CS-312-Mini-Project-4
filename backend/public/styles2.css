@@ -1,0 +1,59 @@
+html {
+    background-color: gray;
+}
+h1 {
+
+    display: flex;
+    justify-content: center;
+}
+h2 {
+
+    display: flex;
+    justify-content: center;
+}
+.allfields
+{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 15%;
+    padding-right: 15%;
+    align-self: center;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+.createsect
+{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 90%;
+    text-wrap: soft;
+}
+.b-label
+{
+    text-align: center;
+    align-self: center;
+}
+input {
+    width: 35%;
+    align-self: center;
+}
+.body-input {
+    height: 50em;
+}
+.contentfield {
+    
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 90%;
+    height: 20em;
+    text-wrap: soft;
+}
+input#createbutton {
+    width: 50%;
+    height: 76px;
+    align-self: center;
+}

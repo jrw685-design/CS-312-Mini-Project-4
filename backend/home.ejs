@@ -1,0 +1,66 @@
+<html>
+    
+    <head>
+        <link rel="stylesheet" href="styles1.css">
+        <title>Home Page</title>
+    </head>
+    <body>
+        <h1>Mini-Project 3</h1>
+        
+        <% if (loggedUser != null) { %>
+            <form class="top-b" id="c-blog" action="/createblog" method="POST">
+            <button id="create-button" type="submit">Add New Blog Post</button>
+            </form>
+            <form class="top-b" id="logout" action="/userlogout" method="POST">
+            <button id="logout-button" type="submit">Logout</button>
+            </form>
+        
+        <% } else {%>
+            <form class="top-b" id="signup" action="/usersignup" method="POST">
+            <button id="signup-button" type="submit">Sign Up</button>
+            </form>
+            <form class="top-b" id="login" action="/userlogin" method="POST">
+            <button id="login-button" type="submit">Log In</button>
+            </form>
+        <% }%>
+        
+        
+        <div id="blog-posts">
+            <% for (i=blogList.length-1; i >= 0; i--) { %>
+            <div class="b-single-post">
+                
+                
+                
+                <div class="blog-top">
+                <h2><%= blogList[i].title %></h2>
+                <div class="blog-author"><h3><%= blogList[i].creator_name %></h3></div>
+                </div>
+                
+                <div class="blog-body">
+                
+                
+                <div class="blog-content"><h3><%= blogList[i].body %></h3></div>
+                <div class="blog-date"><h3><%= blogList[i].date_created %></h3></div>
+                </div>
+                
+                <div class="blog-controls">
+                <form action="/edblog" method="POST">
+                    <input hidden="true" name="bindex" value="<%=blogList[i].blog_id %>"></input>
+                    <% if (loggedUser == blogList[i].creator_user_id) { %>
+                    <input id="editbutton" type="submit" value="Edit">
+                    <% }%>
+                </form>
+                <form action="/delblog" method="POST">
+                    <input hidden="true" name="delbutton" value="<%=blogList[i].blog_id %>"></input>
+                    <% if (loggedUser == blogList[i].creator_user_id) { %>
+                    <input id="deletebutton" type="submit" value="Delete">
+                    <% }%>
+                </form>
+                </div>
+                
+            </div>
+            <% }%>
+            
+        </div>
+    </body>
+</html>
